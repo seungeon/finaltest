@@ -54,7 +54,7 @@ function draw()
 
     fill(0);
    	ellipse(sin(time*2*PI)*50+bubbleX1, bubbleY1,bubbleY1/2,bubbleY1/2);
-   	bubbleY = bubbleY - 10;
+   	bubbleY1 = bubbleY1 - 10;
    	if(bubbleY1 < 0){
    		bubbleY1 = 500;
    	}
