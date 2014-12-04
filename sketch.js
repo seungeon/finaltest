@@ -2,7 +2,7 @@ var loadingImage = 1;
 var bubbleY = 800;
 var bubbleX = 640;
 var bubbleY = 50;
-var bubbleX = 640;
+var bubbleX = 100;
 var bgCount = 0;
 var sound, bgm;
 
