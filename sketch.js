@@ -17,8 +17,8 @@ function draw()
 	background(255);
     background(bg);
     
-    img(bg,0+bgCount,0);
-    img(bg,-bg.width+bgCount,0);
+    image(bg,0+bgCount,0);
+    image(bg,-bg.width+bgCount,0);
     bgCount = bgCount + 10;
     if(bgCount > bg.width){
     	bgCount =0;
