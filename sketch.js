@@ -2,9 +2,11 @@ var loadingImage = 1;
 var bubbleY = 800;
 var bubbleX = 640;
 var bgCount = 0;
-var sound;
+var sound, bgm;
+
 function preload(){
-  sound = loadSound("./bgm.mp3")
+  sound = loadSound("./bgm.mp3");
+	bgm = loadSound("./bgm.mp3");
 }
 function setup()
 {
@@ -14,7 +16,7 @@ function setup()
 
     img = loadImage("img1.png");
     img2 = loadImage("img2.png");
-
+    bgm.loop();
 }
 
 function draw()
