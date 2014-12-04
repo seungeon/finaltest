@@ -19,12 +19,15 @@ function draw()
 
     fill(237,112,50);
     noStroke();
-
-    if(loadingImage === 1){
+	if(mouseX > 100 && mouseX <100+img.width && mouseY > 100 && mouseY <100+img.height){
+		image(img,100,100);
+	}
+	if(loadingImage === 1){
     	image(img,0,0);
     }else if(loadingImage === 2){
     	image(img2,0,0);
     }
+
 }
 
 function mousePressed(){
