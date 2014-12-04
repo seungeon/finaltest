@@ -1,6 +1,7 @@
 var loadingImage = 1;
-
-
+var bubbleY = 800;
+var bubbleX = 640;
+var bgCount = 0;
 function setup()
 {
     createCanvas(1280,908);
@@ -13,9 +14,15 @@ function setup()
 
 function draw()
 {
+	background(255);
     background(bg);
     
-
+    img(bg,0+bgCount,0);
+    img(bg,-bg.width+bgCount,0);
+    bgCount = bgCount + 10;
+    if(bgCount > bg.width){
+    	bgCount =0;
+    }
 
     fill(237,112,50);
     noStroke();
@@ -23,10 +30,19 @@ function draw()
 		image(img,100,100);
 	}
 	if(loadingImage === 1){
-    	image(img,0,0);
+    	image(img,0,0,50,150);
     }else if(loadingImage === 2){
     	image(img2,0,0);
     }
+
+    var time = (new Date())%1000/1000;
+    fill(0);
+   	ellipse(sin(time*2*PI)*100+bubbleX, bubbleY,bubbleY/3,bubbleY/3);
+   	bubbleY = bubbleY - 10;
+   	if(bubbleY < 0){
+   		bubbleY = 800;
+   	}
+
 
 }
 
