@@ -1,6 +1,8 @@
 var loadingImage = 1;
 var bubbleY = 800;
 var bubbleX = 640;
+var bubbleY = 50;
+var bubbleX = 640;
 var bgCount = 0;
 var sound, bgm;
 
@@ -51,10 +53,10 @@ function draw()
    	}
 
     fill(0);
-   	ellipse(sin(time*2*PI)*50+bubbleX, bubbleY,bubbleY/5,bubbleY/5);
+   	ellipse(sin(time*2*PI)*50+bubbleX1, bubbleY1,bubbleY1/5,bubbleY1/5);
    	bubbleY = bubbleY - 10;
-   	if(bubbleY < 0){
-   		bubbleY = 800;
+   	if(bubbleY1 < 0){
+   		bubbleY1 = 50;
    	}
 
 
