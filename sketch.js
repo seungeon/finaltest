@@ -2,6 +2,10 @@ var loadingImage = 1;
 var bubbleY = 800;
 var bubbleX = 640;
 var bgCount = 0;
+var sound;
+function preload(){
+  sound = loadSound("./bgm.mp3")
+}
 function setup()
 {
     createCanvas(1280,908);
@@ -10,6 +14,7 @@ function setup()
 
     img = loadImage("img1.png");
     img2 = loadImage("img2.png");
+
 }
 
 function draw()
@@ -50,8 +55,10 @@ function mousePressed(){
 	if(mouseX > 50 && mouseX <150 && mouseY > 50 && mouseY <150){
 		if(loadingImage === 1){
 			loadingImage = 2;
+			sound.play();
 		}else if(loadingImage ===2){
 			loadingImage =1;
+			sound.stop();
 		}
 	}
 }
