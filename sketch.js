@@ -65,12 +65,12 @@ function draw()
    	}
 
 
-    image(mouse,mouseX, mouseY, 100, 100);
+    image(mouse,mouseX, mouseY);
 
     trailX[0] = (mouseX + trailX[0] * 9) / 10;
     trailY[0] = (mouseY + trailY[0] * 9) / 10;
     
-    image(mouse,trailX[0],trailY[0],80,80);
+    image(mouse,trailX[0],trailY[0]);
 
 
     for (var i = 1; i < 5; i = i+1)
@@ -78,8 +78,16 @@ function draw()
     trailX[i] = (trailX[i-1] + trailX[i] * 9) / 10;
     trailY[i] = (trailY[i-1] + trailY[i] * 9) / 10;
   
-    image(mouse,trailX[i],trailY[i],80,80);
+    image(mouse,trailX[i],trailY[i]);
     }
+
+    mouseColor = color(
+    mouseX / canvasWidth * 255,
+    mouseY / canvasWidth * 255,
+    0,
+    0);
+
+   fill(mouseColor);
 
 
 }
