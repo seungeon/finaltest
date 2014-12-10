@@ -5,6 +5,9 @@ var bubbleY1 = 500;
 var bubbleX1 = 600;
 var bgCount = 0;
 var sound, bgm;
+var trailX = [0,0,0,0,0] ;
+var trailY = [0,0,0,0,0] ;
+
 
 function preload(){
   sound = loadSound("./bgm.mp3");
@@ -58,6 +61,25 @@ function draw()
    	if(bubbleY1 < 0){
    		bubbleY1 = 500;
    	}
+
+
+    ellipse(mouseX, mouseY, 100, 100);
+
+    trailX[0] = (mouseX + trailX[0] * 9) / 10;
+    trailY[0] = (mouseY + trailY[0] * 9) / 10;
+    fill(225,mouseY*225/320,mouseY*225/210)
+    stroke(225,mouseY*225/320,mouseY*225/210);
+    ellipse(trailX[0],trailY[0],80,80);
+
+
+    for (var i = 1; i < 5; i = i+1)
+    {
+    trailX[i] = (trailX[i-1] + trailX[i] * 9) / 10;
+    trailY[i] = (trailY[i-1] + trailY[i] * 9) / 10;
+    stroke(225,mouseY*225/320,mouseY*225/210);
+    fill(225,mouseY*225/320,mouseY*225/210)
+    ellipse(trailX[i],trailY[i],80,80);
+    }
 
 
 }
