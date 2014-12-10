@@ -18,6 +18,8 @@ function setup()
     createCanvas(1280,908);
     bg = loadImage("bg.png");
 
+    mouse = loadImage("mouse.png");
+
 
     img = loadImage("img1.png");
     img2 = loadImage("img2.png");
@@ -63,22 +65,20 @@ function draw()
    	}
 
 
-    ellipse(mouseX, mouseY, 100, 100);
+    image(mouse,mouseX, mouseY, 100, 100);
 
     trailX[0] = (mouseX + trailX[0] * 9) / 10;
     trailY[0] = (mouseY + trailY[0] * 9) / 10;
-    fill(225,mouseY*225/320,mouseY*225/210)
-    stroke(225,mouseY*225/320,mouseY*225/210);
-    ellipse(trailX[0],trailY[0],80,80);
+    
+    image(mouse,trailX[0],trailY[0],80,80);
 
 
     for (var i = 1; i < 5; i = i+1)
     {
     trailX[i] = (trailX[i-1] + trailX[i] * 9) / 10;
     trailY[i] = (trailY[i-1] + trailY[i] * 9) / 10;
-    stroke(225,mouseY*225/320,mouseY*225/210);
-    fill(225,mouseY*225/320,mouseY*225/210)
-    ellipse(trailX[i],trailY[i],80,80);
+  
+    image(mouse,trailX[i],trailY[i],80,80);
     }
 
 
